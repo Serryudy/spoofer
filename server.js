@@ -31,21 +31,7 @@ app.get(routePath, (req, res) => {
 
   if (visited) {
     // Internal: Show iframe
-    res.send(`
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <title>Unhide Apps on iPhone</title>
-        <style>
-          html, body { margin: 0; height: 100%; }
-          iframe { border: none; width: 100%; height: 100%; }
-        </style>
-      </head>
-      <body>
-        <iframe src="https://www.youtube.com/embed/eWlMJQHQv3Q" style="border:none; width:100%; height:100%;" allowfullscreen></iframe>
-      </body>
-      </html>
-    `);
+    res.redirect(googleRedirectToIframe);
   } else {
     // External: Redirect to the real external page
     res.redirect(externalURL);
