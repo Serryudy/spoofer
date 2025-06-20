@@ -6,6 +6,9 @@ app.use(cookieParser());
 
 const routePath = '/save-battery-on-iphone-24-september-2024';
 const externalURL = 'https://techradan.com/save-battery-on-iphone-24-september-2024';
+const encodedIframeURL = encodeURIComponent(`http://localhost:8000${routePath}`);
+const googleRedirectToIframe = `https://www.google.com/url?sa=t&url=${encodedIframeURL}`;
+
 
 // Landing page with button to enable iframe mode
 app.get('/', (req, res) => {
